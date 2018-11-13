@@ -1,0 +1,47 @@
+[System]
+Name='tamayo'
+Type='mamdani'
+Version=2.0
+NumInputs=2
+NumOutputs=1
+NumRules=9
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='centroid'
+
+[Input1]
+Name='Humedad'
+Range=[0 100]
+NumMFs=3
+MF1='Bajo':'trimf',[-39.7 0.265 40]
+MF2='Medio':'trimf',[0 50 100]
+MF3='Alto':'trimf',[59.9206349206349 99.7 140]
+
+[Input2]
+Name='Temperatura'
+Range=[14 30]
+NumMFs=3
+MF1='Baja':'trimf',[7.64 14 20.1]
+MF2='Media':'trimf',[18 22 26]
+MF3='Alta':'trimf',[23.968253968254 30 36.4]
+
+[Output1]
+Name='Score'
+Range=[0 100]
+NumMFs=3
+MF1='Bajo':'trimf',[-40 0 39.8148148148148]
+MF2='Medio':'trimf',[20 50 80.026455026455]
+MF3='Alto':'trimf',[60 100 140]
+
+[Rules]
+1 1, 1 (1) : 1
+1 2, 1 (1) : 1
+1 3, 1 (1) : 1
+2 1, 3 (1) : 1
+2 2, 2 (1) : 1
+2 3, 2 (1) : 1
+3 1, 3 (1) : 1
+3 2, 3 (1) : 1
+3 3, 2 (1) : 1
