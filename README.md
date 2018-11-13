@@ -42,13 +42,13 @@ The proposed Fuzzy inference system (FIS) has 2 inputs, humidity with values fro
 
 There are 9 rules in the FIS, these rules were validated with the local authorities and the local agronomists in charge of the irrigation of the park, these rules are presented as follows:
 
-• If (Humidity is Low) and (Temperature is Low) then (Score is Low)
-• If (Humidity is Low) and (Temperature is Medium) then (Score is Low)
-• If (Humidity is Low) and (Temperature is High) then (Score is Low)
-• If (Humidity is Medium) and (Temperature is Low) then (Score is High)
-• If (Humidity is Medium) and (Temperature is Medium) then (Score is Medium)
-• If (Humidity is Medium) and (Temperature is High) then (Score is Medium)
-• If (Humidity is High) and (Temperature is Low) then (Score is High)
-• If (Humidity is High) and (Temperature is Medium) then (Score is High)
-• If (Humidity is High) and (Temperature is High) then (Score is Medium)
+* If (Humidity is Low) and (Temperature is Low) then (Score is Low)
+* If (Humidity is Low) and (Temperature is Medium) then (Score is Low)
+* If (Humidity is Low) and (Temperature is High) then (Score is Low)
+* If (Humidity is Medium) and (Temperature is Low) then (Score is High)
+* If (Humidity is Medium) and (Temperature is Medium) then (Score is Medium)
+* If (Humidity is Medium) and (Temperature is High) then (Score is Medium)
+* If (Humidity is High) and (Temperature is Low) then (Score is High)
+* If (Humidity is High) and (Temperature is Medium) then (Score is High)
+* If (Humidity is High) and (Temperature is High) then (Score is Medium)
 
