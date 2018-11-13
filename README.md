@@ -36,7 +36,19 @@ The following table shows the performance of the four tested interpolation funct
 | RBF  | 11.3904  | 107.3625 | 10.3615  |
 
 
+The proposed Fuzzy inference system (FIS) has 2 inputs, humidity with values from 1 to 100 (this unit represents the output voltage converted into the sensor humidity scale) and temperature with values from 14 to 30 (Celsius) for each quadrant. This can be seen in the following image:
 
+![alt text](https://github.com/luiscano95/Smart_Irrigation_System/blob/master/Images/fis_smart.png)
 
+There are 9 rules in the FIS, these rules were validated with the local authorities and the local agronomists in charge of the irrigation of the park, these rules are presented as follows:
 
-![alt text](http://url/to/img.png)
+• If (Humidity is Low) and (Temperature is Low) then (Score is Low)
+• If (Humidity is Low) and (Temperature is Medium) then (Score is Low)
+• If (Humidity is Low) and (Temperature is High) then (Score is Low)
+• If (Humidity is Medium) and (Temperature is Low) then (Score is High)
+• If (Humidity is Medium) and (Temperature is Medium) then (Score is Medium)
+• If (Humidity is Medium) and (Temperature is High) then (Score is Medium)
+• If (Humidity is High) and (Temperature is Low) then (Score is High)
+• If (Humidity is High) and (Temperature is Medium) then (Score is High)
+• If (Humidity is High) and (Temperature is High) then (Score is Medium)
+
