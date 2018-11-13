@@ -52,3 +52,12 @@ There are 9 rules in the FIS, these rules were validated with the local authorit
 * If (Humidity is High) and (Temperature is Medium) then (Score is High)
 * If (Humidity is High) and (Temperature is High) then (Score is Medium)
 
+
+|                          |     | Annual Expenditure (In Cubic Decimeters) | Annual Expenditure (In Soles) |
+|:------------------------:|:---:|:----------------------------------------:|:-----------------------------:|
+|    Current Irrigation    | Min |                 6,750,000                |         S/. 15,930.00         |
+|                          | Max |                 9,000,000                |         S/. 21,240.00         |
+| Irrigation based on data | Min |                 3,918,750                |          S/. 9,248.25         |
+|                          | Max |                 5,225,000                |         S/. 12,331.00         |
+|          Savings         | Min |                 2,831,250                |          S/. 6,681.75         |
+|                          | Max |                 3,775,000                |          S/. 8,909.00         |
