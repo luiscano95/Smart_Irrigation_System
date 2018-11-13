@@ -52,6 +52,8 @@ There are 9 rules in the FIS, these rules were validated with the local authorit
 * If (Humidity is High) and (Temperature is Medium) then (Score is High)
 * If (Humidity is High) and (Temperature is High) then (Score is Medium)
 
+The maximum and the minimum water usage and the cost associated with the prices obtained from the district’s water supplier, sedapal were estimated in order to evaluate the performance of the proposed irrigation methodology. Nowadays, the park is irrigated by sprinklers, each sprinkler expels between 1500 to 2000 litres of water per hour. With this information, the minimum and maximum water used by the 50 sprinklers for 15 minutes a day, is estimated for a year. This information is summarized in the following table:
+
 
 |                          |     | Annual Expenditure (In Cubic Decimeters) | Annual Expenditure (In Soles) |
 |:------------------------:|:---:|:----------------------------------------:|:-----------------------------:|
@@ -61,3 +63,10 @@ There are 9 rules in the FIS, these rules were validated with the local authorit
 |                          | Max |                 5,225,000                |         S/. 12,331.00         |
 |          Savings         | Min |                 2,831,250                |          S/. 6,681.75         |
 |                          | Max |                 3,775,000                |          S/. 8,909.00         |
+
+As shown in the table, the annual expenditure savings in terms of cubic decimeters is very high, with an averages savings of 3,303,125 cubic decimeters. Although the monetary saving is not so high, this is because the state currently subsidizes the water and makes the expenditure significantly less than in other Latin American countries.
+
+The proposed dashboard can be seen in the following image, there are 4 important figures: First, humidity and temperature maps for the park are presented to achieve real-time monitoring of the soil humidity and quadrant temperature. The humidity map of the park was constructed using the values obtained through the interpolation of the data collected by sensors, the temperature map was constructed using the average temperature from the total quadrant since the variations for the 18 points were not significant enough, this is because a variation of 1 or 2 units does not represent a big impact in the score calculated. Then, the hourly precipitation forecast for the day is presented, this forecast helps the agronomists in the decision of when to water the park. Finally, the dashboard also presents the fuzzy inference system output (scores) by quadrant with the recommendation interval given by the
+experts. The scores provide a clear measurement of the quality of the soil for each quadrant to the agronomists. In a real case scenario, the experts would combine the forecast, the maps and the score to take appropriate decisions for irrigation. For example, if the scores values of the quadrants are low but the precipitation forecast indicates that it is very likely to rain in the next hours the recommendation would be to not water the park.
+
+![alt text](https://github.com/luiscano95/Smart_Irrigation_System/blob/master/Images/dashboard_v2%20(1).svg)
