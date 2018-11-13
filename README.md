@@ -25,3 +25,4 @@ segment of the park. The methodology was applied in a case study that correspond
 park in the city of Lima. Significant expected savings were obtained in terms of water resources and
 monetary units, which demonstrates the viability of the application of this smart system oriented at
 supporting decision-making on smart irrigation in the city’s parks.
+
