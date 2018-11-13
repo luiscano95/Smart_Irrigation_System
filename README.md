@@ -1,4 +1,4 @@
-# Smart_Irrigation_System
+# Smart City Park Irrigation System
 This is the repository for the paper titled "Smart City Park Irrigation System: A Case Study of San Isidro, Lima Perú" published here [![Paper](https://github.com/luiscano95/Smart_Irrigation_System/blob/master/svg/mdpi-logo.svg)](https://www.mdpi.com/2504-3900/2/19/1227)
 
 # Abstract:
@@ -23,4 +23,11 @@ segment of the park. The methodology was applied in a case study that correspond
 park in the city of Lima. Significant expected savings were obtained in terms of water resources and
 monetary units, which demonstrates the viability of the application of this smart system oriented at
 supporting decision-making on smart irrigation in the city’s parks.
+
+# Main Results
+
+| First Header  | Second Header |
+| ------------- | ------------- |
+| Content Cell  | Content Cell  |
+| Content Cell  | Content Cell  |
 
