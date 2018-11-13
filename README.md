@@ -1,7 +1,7 @@
 # Smart_Irrigation_System
 This is the repository for the paper titled "Smart City Park Irrigation System: A Case Study of San Isidro, Lima Perú"
 
-[![Paper](https://github.com/luiscano95/Smart_Irrigation_System/blob/master/svg/mdpi-logo.svg | scale=0.1)](https://www.mdpi.com/2504-3900/2/19/1227)
+[![Paper](https://github.com/luiscano95/Smart_Irrigation_System/blob/master/svg/mdpi-logo.svg)](https://www.mdpi.com/2504-3900/2/19/1227)
 
 # Abstract:
 Water management has become a global priority in recent decades. The demand for water
