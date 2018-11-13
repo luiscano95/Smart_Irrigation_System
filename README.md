@@ -26,8 +26,9 @@ supporting decision-making on smart irrigation in the city’s parks.
 
 # Main Results
 
-| First Header  | Second Header |
-| ------------- | ------------- |
-| Content Cell  | Content Cell  |
-| Content Cell  | Content Cell  |
-
+| Method/Error  | MAPE | MSE | RMSE | 
+| ------------- | ------------- | ------------ | ------------- |
+| Bilinear  | 124.0471  | 1152.7025 | 33.9514  |
+| 2D Nearest Neighbour  | 144.1189  | 1935.5560 | 43.9949  |
+| Bicubic  | 123.6736  | 1066.5454 | 32.6580  |
+| RBF  | 11.3904  | 107.3625 | 10.3615  |
