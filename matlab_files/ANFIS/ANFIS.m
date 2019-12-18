@@ -6,7 +6,7 @@ classdef ANFIS
     % * Date 24-03-2017
     %
     methods (Static)
-        function Model=train(TrainData,TrainClass,split_range,numMFs,inmftype,outmftype,dispOpt,epoch_n)
+        function Model=train(TrainData,TrainClass,partitiontype,split_range,numMFs,inmftype,outmftype,dispOpt,epoch_n)
             
             % Inputs
             % TrainData-Data to be Train
@@ -29,18 +29,18 @@ classdef ANFIS
             while(1)
                 if iteration==1
                     [Model(iteration).AnfisModel,Model(iteration).Reference,Model(iteration).splitrange]=ANFIS.subtrain(TrainData,TrainClass,...
-                        split_range,inmftype,outmftype,numMFs,dispOpt,epoch_n );
+                        partitiontype,split_range,inmftype,outmftype,numMFs,dispOpt,epoch_n );
                 else
                     [Model(iteration).AnfisModel,Model(iteration).Reference,Model(iteration).splitrange]=ANFIS.subtrain(Model(iteration-1).Reference,...
-                        TrainClass,split_range,inmftype,outmftype,numMFs,dispOpt,epoch_n );
+                        partitiontype,TrainClass,split_range,inmftype,outmftype,numMFs,dispOpt,epoch_n );
                 end
                 if length(Model(iteration).splitrange)<3
                     break
                 end
                 iteration=iteration+1;
             end
-        end
-        function [AnfisModel,Refernce,splitrange]=subtrain(TrainData,TrainClass,split_range,mfType1,mfType2,numMFs,dispOpt,epoch_n )
+        end                                 %ANFIS.subtrain(TrainData,TrainClass,split_range,inmftype,outmftype,numMFs,dispOpt,epoch_n )
+        function [AnfisModel,Refernce,splitrange]=subtrain(TrainData,TrainClass,partitiontype,split_range,mfType1,mfType2,numMFs,dispOpt,epoch_n )
             %% Split data for Better Classification
             lengthOfdata=size(TrainData,2);
             splitrange=zeros(100,1);
@@ -68,7 +68,19 @@ classdef ANFIS
             for i=1:cycle
                 dataRange=splitrange(i)+1:splitrange(i+1);
                 fisdata=[TrainData(:,dataRange) TrainClass];
-                fis1=genfis1(fisdata,numMFs,mfType1,mfType2);
+                %fis1=genfis1(fisdata,numMFs,mfType1,mfType2);
+                %fismat = genfis1(data,numMFs,inmftype,outmftype);
+                %fismat = genfis2(Xin,Xout,radii,xBounds,options,user_centers)
+                %fismat = genfis3(Xin,Xout,type,cluster_n,fcmoptions)
+                
+                opt = genfisOptions(partitiontype);
+                if strcmp(partitiontype,'GridPartition')==1
+                    opt.NumMembershipFunctions = repmat(numMFs, 1, size(TrainData,2));
+                    opt.InputMembershipFunctionType = string(repmat({mfType1}, 1, size(TrainData,2)));
+                    opt.OutputMembershipFunctionType = mfType2;
+                end
+                fis1 = genfis(TrainData(:,dataRange),TrainClass,opt);
+                
                 AnfisModel{i}=anfis(fisdata,fis1,epoch_n,dispOpt);
                 Refernce(:,i)=evalfis(TrainData(:,dataRange),AnfisModel{i});
             end
