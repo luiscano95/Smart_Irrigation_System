@@ -20,8 +20,9 @@ dispOpt = zeros(1,4);
 numMFs = 3;
 inmftype= 'gbellmf';
 outmftype= 'linear';
+partitiontype = 'SubtractiveClustering';
 split_range=3;
-Model=ANFIS.train(Input,OutputOneClass,split_range,numMFs,inmftype,outmftype,dispOpt,epoch_n);
+Model=ANFIS.train(Input,OutputOneClass,partitiontype,split_range,numMFs,inmftype,outmftype,dispOpt,epoch_n);
 disp('Model')
 disp(Model)
 %Result=ANFIS.classify(Model,InputTrain)
@@ -35,6 +36,16 @@ Result=round(ANFIS.classify(Model,Input));
 
 %ResultConfusion = dummyvar(Result');
 plotconfusion(OutputOneClass',Result')
+
+numModels = length(Model.AnfisModel);
+
+for i = 1:length(Model.AnfisModel)
+    disp('Model:')
+    disp(i)
+    disp(Model.AnfisModel{1,i}.Outputs.MembershipFunctions)
+    disp(Model.AnfisModel{1,i}.Rules)
+end
+
 toc
 %%%%
 %%%%
