@@ -20,7 +20,12 @@ dispOpt = zeros(1,4);
 numMFs = 3;
 inmftype= 'gbellmf';
 outmftype= 'linear';
-partitiontype = 'SubtractiveClustering';
+partitiontype = genfisOptions('GridPartition');
+partitiontype.NumMembershipFunctions = repmat(numMFs, 1, size(TrainData,2));
+partitiontype.InputMembershipFunctionType = string(repmat({mfType1}, 1, size(TrainData,2)));
+partitiontype.OutputMembershipFunctionType = mfType2;
+%partitiontype = genfisOptions('FCMClustering','NumClusters',6)%('SubtractiveClustering')%,...
+                   % 'ClusterInfluenceRange');
 split_range=3;
 Model=ANFIS.train(Input,OutputOneClass,partitiontype,split_range,numMFs,inmftype,outmftype,dispOpt,epoch_n);
 disp('Model')
