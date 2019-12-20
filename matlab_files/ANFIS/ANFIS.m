@@ -11,6 +11,7 @@ classdef ANFIS
             % Inputs
             % TrainData-Data to be Train
             % TrainClass Class of train
+            % partitiontype genfis options to select partition type GridPartition, FCMClustering or SubtractiveClustering
             % split_range=Data split to Anfis Classification range (2,3)
             % FIS INPUTS
             % 1.numMFs===== is a vector whose coordinates specify the number of membership functions associated with each input.
@@ -73,13 +74,7 @@ classdef ANFIS
                 %fismat = genfis2(Xin,Xout,radii,xBounds,options,user_centers)
                 %fismat = genfis3(Xin,Xout,type,cluster_n,fcmoptions)
                 
-                opt = genfisOptions(partitiontype);
-                if strcmp(partitiontype,'GridPartition')==1
-                    opt.NumMembershipFunctions = repmat(numMFs, 1, size(TrainData,2));
-                    opt.InputMembershipFunctionType = string(repmat({mfType1}, 1, size(TrainData,2)));
-                    opt.OutputMembershipFunctionType = mfType2;
-                end
-                fis1 = genfis(TrainData(:,dataRange),TrainClass,opt);
+                fis1 = genfis(TrainData(:,dataRange),TrainClass,partitiontype);
                 
                 AnfisModel{i}=anfis(fisdata,fis1,epoch_n,dispOpt);
                 Refernce(:,i)=evalfis(TrainData(:,dataRange),AnfisModel{i});
